@@ -1,24 +1,14 @@
 # demo-lookmap
 
-## Project setup
-```
-npm install
-```
+### 网页介绍
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+该网站为一个浏览图片的网站，该网站仅用于个人学习
 
-### Compiles and minifies for production
-```
-npm run build
-```
+由于接口功能有限，所以网页仅仅只有查看图片的功能
 
-### Lints and fixes files
-```
-npm run lint
-```
+这个网页主要以实现交互为主，所以没有在页面布局花太多功夫，网页看起来比较简陋
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### 网页搭建
+
+* 网页通过vue-cli搭建，为单页面，第一次加载可能比较慢
+* 由于网页内的图片大多为高清图片，网速较慢可能会出现长时间加载不出来的情况
