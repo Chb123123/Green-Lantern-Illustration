@@ -45,6 +45,12 @@ export default {
   computed: {
     ...mapState(['imgAbout'])
   },
+  watch: {
+    imgAbout () {
+      this.getinitImg()
+      console.log('切换了图片')
+    }
+  },
   filters: {
     // 过率图片类别
     Classification (type) {
@@ -83,8 +89,6 @@ export default {
     goImgAbout (obj) {
       this.getImgAbout(obj)
       window.scroll(0, 0)
-      // console.log(obj)
-      // this.$router.push('/imgelement')
     },
     goIndex () {
       this.$router.push('/')

@@ -28,6 +28,7 @@
 import { getImgList } from '@/api/getImgList'
 import { mapMutations } from 'vuex'
 export default {
+  name: 'HomeView',
   data () {
     return {
       navList: [
