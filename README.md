@@ -12,3 +12,7 @@
 
 * 网页通过vue-cli搭建，为单页面，第一次加载可能比较慢
 * 由于网页内的图片大多为高清图片，网速较慢可能会出现长时间加载不出来的情况
+
+### 项目在线预览
+
+[点击前往](https://chb123123.github.io/Green-Lantern-Illustration/dist/)
