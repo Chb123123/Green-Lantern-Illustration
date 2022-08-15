@@ -15,4 +15,4 @@
 
 ### 项目在线预览
 
-[点击前往](https://chb123123.github.io/Green-Lantern-Illustration/dist/)
+[点击前往](https://chb123123.github.io/Green-Lantern-Illustration/dist/index.html#/)
