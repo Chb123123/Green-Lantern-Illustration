@@ -7,7 +7,7 @@
       <div class="imgstyle">
         <div class="imgtitle">{{ imgAbout.title }}</div>
         <div class="img">
-          <img :src="imgAbout.url" alt="">
+          <img :src="imgAbout.url" alt="" ondragstart="return false;">
         </div>
       </div>
       <!-- <div class="download">
@@ -21,7 +21,7 @@
       <p>相关图片推荐</p>
       <div class="imglist">
         <div v-for="item in imgList" :key="item.id" class="imgStyle" @click="goImgAbout(item)">
-          <img :src="item.url" alt="" :title="item.title">
+          <img :src="item.url" alt="" :title="item.title" ondragstart="return false;">
           <div class="imgTitle">{{ item.title }}</div>
         </div>
       </div>

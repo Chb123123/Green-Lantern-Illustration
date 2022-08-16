@@ -8,7 +8,7 @@
     </div>
     <div class="imglist">
       <div v-for="item in imgList" :key="item.id" class="imgStyle" @click="goImgAbout(item)">
-        <img :src="item.url" alt="" :title="item.title">
+        <img :src="item.url" alt="" :title="item.title" ondragstart="return false;">
         <div class="imgTitle">{{ item.title }}</div>
       </div>
     </div>
