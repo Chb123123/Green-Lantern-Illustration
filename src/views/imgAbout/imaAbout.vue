@@ -21,11 +21,12 @@
       <p>相关图片推荐</p>
       <div class="imglist">
         <div v-for="item in imgList" :key="item.id" class="imgStyle" @click="goImgAbout(item)">
-          <img :src="item.url" alt="" :title="item.title" ondragstart="return false;">
+          <img :src="item.url" alt="" :title="item.title" @load="showImg" ondragstart="return false;">
           <div class="imgTitle">{{ item.title }}</div>
         </div>
       </div>
     </div>
+    <!-- <div class="showFlag">图片未加载</div> -->
   </div>
 </template>
 
@@ -39,7 +40,8 @@ export default {
     return {
       imgList: [],
       // 需要下载的图片
-      downloadImg: ''
+      downloadImg: '',
+      showImgFlag: false
     }
   },
   computed: {
@@ -47,6 +49,7 @@ export default {
   },
   watch: {
     imgAbout () {
+      this.showImgFlag = false
       this.getinitImg()
       console.log('切换了图片')
     }
@@ -87,8 +90,12 @@ export default {
       console.log(res)
     },
     goImgAbout (obj) {
-      this.getImgAbout(obj)
-      window.scroll(0, 0)
+      if (this.showImgFlag) {
+        this.getImgAbout(obj)
+        window.scroll(0, 0)
+      } else {
+        alert('图片为加载完成')
+      }
     },
     goIndex () {
       this.$router.push('/')
@@ -134,6 +141,10 @@ export default {
       // }).then((res) => {
       //   console.log(res)
       // })
+    },
+    showImg () {
+      console.log('图片加载完成')
+      this.showImgFlag = true
     }
   },
   created () {
@@ -145,6 +156,7 @@ export default {
 
 <style lang="less" scoped>
   .imgElementContainer{
+    position: relative;
     padding-bottom: 30px;
     background-color: #eee;
     .heardr{

@@ -8,7 +8,7 @@
     </div>
     <div class="imglist">
       <div v-for="item in imgList" :key="item.id" class="imgStyle" @click="goImgAbout(item)">
-        <img :src="item.url" alt="" :title="item.title" ondragstart="return false;">
+        <img :src="item.url" alt="" :title="item.title" @load="showImg" ondragstart="return false;">
         <div class="imgTitle">{{ item.title }}</div>
       </div>
     </div>
@@ -51,7 +51,8 @@ export default {
       newType: '',
       flag: false,
       // 当前的图片类型
-      imgType: '全部'
+      imgType: '全部',
+      showImgFlag: false
     }
   },
   methods: {
@@ -97,6 +98,7 @@ export default {
     },
     // 点击图片，前往图片详情
     goImgAbout (obj) {
+      this.showImgFlag = false
       obj.imgType = this.imgType
       this.getImgAbout(obj)
       // console.log(obj)
@@ -105,6 +107,10 @@ export default {
     // 点击标签，返回首页
     goIndex () {
       this.$router.push('/')
+    },
+    showImg () {
+      console.log('图片加载完成')
+      this.showImgFlag = true
     }
   },
   created () {
